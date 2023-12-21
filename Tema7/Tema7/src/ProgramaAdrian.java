@@ -5,7 +5,7 @@ public class ProgramaAdrian {
         System.out.println("Dime una cadena introducida entre llaves{} y antes de la llave pones un numero");
         String cadena = teclado.nextLine();
         System.out.println(repeticiones(cadena));
-        
+        teclado.close();
     }
     public static String repeticiones(String cadena){
         //Tenemos que localizar el { para ver la longitud y hacer una cadena con las primeras posiciones para ver cuantos numeros son
