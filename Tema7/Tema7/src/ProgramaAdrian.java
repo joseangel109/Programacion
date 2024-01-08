@@ -23,7 +23,4 @@ public class ProgramaAdrian {
             String textoEnd= textoFin.toString();
             return textoEnd;
     }
-    
-//"^(\\d+\\{.+\\})+$" Lo que hace esto es ^Simbolo de Inicio y Fin $ (Para agrupar) \\d+ Nos dice que tiene que tener
-// 1 o muchos numeros \\{ es para que aparecezca en la cadena { si o si y no lo tome como cierre .+ es para que tenga 1 o muchos caracteres
 }    
