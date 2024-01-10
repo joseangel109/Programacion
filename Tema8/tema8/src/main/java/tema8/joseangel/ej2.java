@@ -2,7 +2,7 @@ package tema8.joseangel;
 
 import java.util.Scanner;
 
-public class ej2 {
+public class Ej2 {
     public static void main(String[] args) {
         int suma=0;
         System.out.println("Dame 10 numeros y te doy la suma");

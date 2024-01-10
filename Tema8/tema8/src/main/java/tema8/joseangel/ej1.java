@@ -2,7 +2,7 @@ package tema8.joseangel;
 
 import java.util.Scanner;
 
-public class ej1 {
+public class Ej1 {
     public static void main(String[] args) {
         Scanner teclado=new Scanner(System.in);
         int numeros[]; numeros = new int[10]; //Decimos que quiero un array de 10 numeros
