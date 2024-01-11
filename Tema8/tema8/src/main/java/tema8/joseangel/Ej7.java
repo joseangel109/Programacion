@@ -15,15 +15,15 @@ public class Ej7 {
         } while (p > q);
 
         // Ajustar el tamaño del array
-        int numeroVeces[] = new int[(q - p) + 1];
+        int numero[] = new int[(q - p) + 1];
 
-        for (int i = 0; i < numeroVeces.length; i++) {
+        for (int i = 0; i < numero.length; i++) {
             // Ajustar el índice para llenar el array correctamente
-            numeroVeces[i] = p + i;
+            numero[i] = p + i;
         }
 
-        for (int i = 0; i < numeroVeces.length; i++) {
-            System.out.println(numeroVeces[i]);
+        for (int i = 0; i < numero.length; i++) {
+            System.out.println(numero[i]);
         }
     }
 }
