@@ -17,6 +17,5 @@ public class Ej11 {
             array2[i]=array1[auxiliar];
             System.out.println(array2[i]);
         }
-    teclado.close();
     }
 }
