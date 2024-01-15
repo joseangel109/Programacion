@@ -17,7 +17,7 @@ public class Ej24 {
                 System.out.println("Alumno " + (i + 1) + " dame la nota de la asignatura " + (j + 1));
                 matriz[i][j] = teclado.nextDouble();
             }
+            Arrays.sort(matriz[i]);
         }
-        Arrays.sort(matriz);
     }
 }
