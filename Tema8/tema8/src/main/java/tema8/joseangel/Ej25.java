@@ -1,6 +1,12 @@
 package tema8.joseangel;
 
 import java.util.Scanner;
+// Necesitamos crear un programa para registrar sueldos de hombres y mujeres de una
+// empresa y detectar si existe brecha salarial entre ambos. El programa pedirá por
+// teclado la información de N personas distintas (valor también introducido por teclado).
+// Para cada persona, pedirá su género (0 para varón y 1 para mujer) y su sueldo. Esta
+// información debe guardarse en una única matriz. Luego se mostrará por pantalla el
+// sueldo medio de cada género
 
 public class Ej25 {
 
@@ -9,37 +15,36 @@ public class Ej25 {
 
         System.out.print("Ingrese el número de personas: ");
         int n = teclado.nextInt();
-        int[][] matriz = new int[n][2];
-
-        for (int i = 0; i < n; i++) {
-            System.out.println("Ingrese información para la persona " + (i + 1));
-            System.out.print("Género (0 para varón, 1 para mujer): ");
-            matriz[i][0] = teclado.nextInt();
-            System.out.print("Sueldo: ");
-            matriz[i][1] = teclado.nextInt();
-        }
-
-        double sueldoPromedioVarones = calcularSueldoPromedio(matriz, 0);
-        double sueldoPromedioMujeres = calcularSueldoPromedio(matriz, 1);
-
-        System.out.println("Sueldo promedio de varones: " + sueldoPromedioVarones);
-        System.out.println("Sueldo promedio de mujeres: " + sueldoPromedioMujeres);
-
-        double brechaSalarial = sueldoPromedioMujeres - sueldoPromedioVarones;
-        System.out.println("Brecha salarial: " + brechaSalarial);
-    }
-
-    private static double calcularSueldoPromedio(int[][] matriz, int genero) {
-        int totalPersonas = 0;
-        int totalSueldos = 0;
-
+        double[][] matriz = new double[n][2];
+        int genero;
+        int contMujeres = 0;
+        int contHombres = 0;
+        double mediaMujeres = 0;
+        double mediaHombres = 0;
         for (int i = 0; i < matriz.length; i++) {
-            if (matriz[i][0] == genero) {
-                totalPersonas++;
-                totalSueldos += matriz[i][1];
+            do {
+                System.out.println("0 si es hombre");
+                System.out.println("1 si es mujer");
+                genero = teclado.nextInt();
+            } while (genero != 1 && genero != 0);
+            switch (genero) {
+                case 0:
+                    System.out.println("Eres hombre. Cual es tu salario?");
+                    matriz[i][0] = teclado.nextDouble();
+                    contHombres++;
+                    mediaHombres = mediaHombres + matriz[i][0];
+                    break;
+                case 1:
+                    System.out.println("Eres hombre. Cual es tu salario?");
+                    matriz[i][1] = teclado.nextDouble();
+                    contMujeres++;
+                    mediaMujeres = mediaMujeres + matriz[i][1];
+                    break;
             }
         }
-
-        return (totalPersonas > 0) ? (double) totalSueldos / totalPersonas : 0;
+        mediaHombres = mediaHombres / contHombres;
+        mediaMujeres = mediaMujeres / contMujeres;
+        System.out.println("El suelo medio de los hombres es: " + mediaHombres);
+        System.out.println("El suelo medio de las mujeres es: " + mediaMujeres);
     }
 }
