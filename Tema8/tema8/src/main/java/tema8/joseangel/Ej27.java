@@ -8,11 +8,9 @@ public class Ej27 {
         System.out.println("Dime un numero y te digo los divisores");
         Scanner teclado = new Scanner(System.in);
         int numero = teclado.nextInt();
-        ArrayList<Integer> resultado = encontrarDivisores(numero);
-
-        System.out.println("Divisores de " + numero + ": " + resultado);
+        System.out.println("Divisores de " + numero + ": " + encontrarDivisores(numero));
     }
-
+    
     public static ArrayList<Integer> encontrarDivisores(int numero) {
         ArrayList<Integer> divisores = new ArrayList<>();
 

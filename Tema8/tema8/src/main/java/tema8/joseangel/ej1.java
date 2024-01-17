@@ -12,6 +12,5 @@ public class Ej1 {
         for (int i = 0; i < numeros.length; i++) {
            System.out.println(numeros[i]); //Muestro los numeros
         }
-
     }
 }
