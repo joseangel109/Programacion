@@ -10,7 +10,7 @@ public class Ej27 {
         int numero = teclado.nextInt();
         System.out.println("Divisores de " + numero + ": " + encontrarDivisores(numero));
     }
-    
+
     public static ArrayList<Integer> encontrarDivisores(int numero) {
         ArrayList<Integer> divisores = new ArrayList<>();
 
@@ -19,7 +19,6 @@ public class Ej27 {
                 divisores.add(i);
             }
         }
-
         return divisores;
     }
 }
