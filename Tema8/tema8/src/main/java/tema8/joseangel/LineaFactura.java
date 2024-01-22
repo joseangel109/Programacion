@@ -27,4 +27,44 @@ public class LineaFactura {
         // TODO Auto-generated constructor stub
     }
 
+    public String getDescripcionProducto() {
+        return descripcionProducto;
+    }
+
+    public void setDescripcionProducto(String descripcionProducto) {
+        this.descripcionProducto = descripcionProducto;
+    }
+
+    public float getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public void setPrecioUnitario(float precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
+    public int getCantidadUnidades() {
+        return cantidadUnidades;
+    }
+
+    public void setCantidadUnidades(int cantidadUnidades) {
+        this.cantidadUnidades = cantidadUnidades;
+    }
+
+    public static int getDescuento() {
+        return descuento;
+    }
+
+    public static void setDescuento(int descuento) {
+        LineaFactura.descuento = descuento;
+    }
+
+    public float getImporteTotalLinea() {
+        return importeTotalLinea;
+    }
+
+    public void setImporteTotalLinea(float importeTotalLinea) {
+        this.importeTotalLinea = importeTotalLinea;
+    }
+
 }
