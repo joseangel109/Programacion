@@ -19,7 +19,7 @@ import java.util.Iterator;
 
 public class Ej28clase {
     public static void main(String[] args) {
-        //Instanciamos los 5 productos
+        // Instanciamos los 5 productos
         System.out.println("Los productos iniciales son:");
         Productos p1 = new Productos("lila", 8);
         Productos p2 = new Productos("azul", 7);
@@ -27,38 +27,38 @@ public class Ej28clase {
         Productos p4 = new Productos("amarillo", 3);
         Productos p5 = new Productos("verde", 1);
 
-        //Creamos el arraylist
+        // Creamos el arraylist
         ArrayList productos = new ArrayList<>();
 
-        //añadimos los productos a la lista
+        // añadimos los productos a la lista
         productos.add(p1);
         productos.add(p2);
         productos.add(p3);
         productos.add(p4);
         productos.add(p5);
 
-        //Visualizamos la lista con iterator
-        Iterator <Productos>iter = productos.iterator();
+        // Visualizamos la lista con iterator
+        Iterator<Productos> iter = productos.iterator();
         while (iter.hasNext()) {
             System.out.println(iter.next());
         }
         System.out.println("Hasta aqui tenemos los 5 productos principales:");
         System.out.println("----------------------------------------------------------------------");
         System.out.println("Ahora eliminamos el Lila y el Azul y añadimos negro");
-        //Eliminamos dos productos
+        // Eliminamos dos productos
         productos.remove(p1);
         productos.remove(p2);
-        
-        //Añadimos 1 producto en la 3 linea
+
+        // Añadimos 1 producto en la 3 linea
         productos.add(1, new Productos("negro", 12));
 
-        //Visualizamos la lista con iterator
-        Iterator <Productos>iter2 = productos.iterator();
+        // Visualizamos la lista con iterator
+        Iterator<Productos> iter2 = productos.iterator();
         while (iter2.hasNext()) {
             System.out.println(iter2.next());
         }
         System.out.println("----------------------------------------------------------------------------");
-        //Eliminamos los productos de la lista
+        // Eliminamos los productos de la lista
         productos.clear();
     }
 
