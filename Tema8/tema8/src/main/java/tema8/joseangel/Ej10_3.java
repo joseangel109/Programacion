@@ -39,7 +39,7 @@ public class Ej10_3 {
                     contador++;
                 }
             }
-            System.out.println("En la fila " + (i + 1) + " hay " + contador + " múltiplos de V");
+            System.out.println("En la fila " + i + " hay " + contador + " múltiplos de V");
         }
     }
 }
