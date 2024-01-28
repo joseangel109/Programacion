@@ -1,5 +1,3 @@
-package tema8.joseangel;
-
 // Clase ‘Articulo’
 // • Un artículo tiene un identificador (número entero), un nombre, un precio de
 // venta a cliente, un precio de compra a proveedor, un IVA (%) y un stock

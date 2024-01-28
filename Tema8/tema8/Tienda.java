@@ -1,5 +1,3 @@
-package tema8.joseangel;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
