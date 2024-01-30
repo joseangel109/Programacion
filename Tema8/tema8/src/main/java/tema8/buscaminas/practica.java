@@ -1,4 +1,5 @@
 package tema8.buscaminas;
+
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -31,24 +32,49 @@ public class practica {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
                 if (matriz[i][j] == -1) {
-                    if (matriz[i][j] != -1) matriz[i][j]++;
-                    if (matriz[i][j - 1] != -1) matriz[i][j - 1]++;
-                    if (matriz[i][j + 1] != -1) matriz[i][j + 1]++;
-                    if (matriz[i - 1][j - 1] != -1) matriz[i - 1][j - 1]++;
-                    if (matriz[i - 1][j] != -1) matriz[i - 1][j]++;
-                    if (matriz[i - 1][j + 1] != -1) matriz[i - 1][j + 1]++;
-                    if (matriz[i + 1][j - 1] != -1) matriz[i + 1][j - 1]++;
-                    if (matriz[i + 1][j] != -1)  matriz[i + 1][j]++;
-                    if (matriz[i + 1][j + 1] != -1) matriz[i + 1][j + 1]++;
+                    // if (matriz[i][j] != -1) matriz[i][j]++;
+                    // if (matriz[i][j - 1] != -1) matriz[i][j - 1]++;
+                    // if (matriz[i][j + 1] != -1) matriz[i][j + 1]++;
+                    // if (matriz[i - 1][j - 1] != -1) matriz[i - 1][j - 1]++;
+                    // if (matriz[i - 1][j] != -1) matriz[i - 1][j]++;
+                    // if (matriz[i - 1][j + 1] != -1) matriz[i - 1][j + 1]++;
+                    // if (matriz[i + 1][j - 1] != -1) matriz[i + 1][j - 1]++;
+                    // if (matriz[i + 1][j] != -1) matriz[i + 1][j]++;
+                    // if (matriz[i + 1][j + 1] != -1) matriz[i + 1][j + 1]++;
+                    // if (matriz[i][j + 1] == -1) {
+                    // matriz[i][j + 1]++;
+                    // }
+                    // if (matriz[i][j - 1] == -1) {
+                    // matriz[i][j - 1]++;
+                    // }
+                    // if (matriz[i - 1][j] == -1) {
+                    // matriz[i - 1][j]++;
+                    // }
+                    // if (matriz[i + 1][j] == -1) {
+                    // matriz[i + 1][j]++;
+                    // }
+                    // if (matriz[i - 1][j - 1] == -1) {
+                    // matriz[i - 1][j - 1]++;
+                    // }
+                    // if (matriz[i - 1][j + 1] == -1) {
+                    // matriz[i - 1][j + 1]++;
+                    // }
+                    // if (matriz[i + 1][j - 1] == -1) {
+                    // matriz[i + 1][j - 1]++;
+                    // }
+                    // if (matriz[i + 1][j - 1] == -1) {
+                    // matriz[i + 1][j - 1]++;
+                    // }
+                    // }
+                }
+                for (int[] j : matriz) {
+                    for (int js : j) {
+                        System.out.printf("%3d", js);
+                    }
+                    System.out.println();
                 }
             }
-        }
-        for (int[] i : matriz) {
-            for (int js : i) {
-                System.out.printf("%3d", js);
-            }
-            System.out.println();
+
         }
     }
-
 }
