@@ -3,26 +3,32 @@ package Ej2;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Aves extends Mascotas {
+public abstract class Aves extends Mascotas {
     boolean pico;
     boolean vuela;
+
     public boolean isPico() {
         return pico;
     }
+
     public void setPico(boolean pico) {
         this.pico = pico;
     }
+
     public boolean isVuela() {
         return vuela;
     }
+
     public void setVuela(boolean vuela) {
         this.vuela = vuela;
     }
+
     public Aves(String nombre, int edad, boolean estado, LocalDate fechaNacimiento, boolean pico, boolean vuela) {
         super(nombre, edad, estado, fechaNacimiento);
         this.pico = pico;
         this.vuela = vuela;
     }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -31,6 +37,7 @@ public class Aves extends Mascotas {
         result = prime * result + (vuela ? 1231 : 1237);
         return result;
     }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -46,13 +53,22 @@ public class Aves extends Mascotas {
             return false;
         return true;
     }
+
     @Override
     public String toString() {
-        return "Aves [pico=" + pico + ", vuela=" + vuela + "]";
+        return " [pico=" + pico + ", vuela=" + vuela + super.toString() + "]";
     }
 
     public void muestra() {
-                System.out.println(toString());
+        System.out.println(toString());
 
-        }
+    }
+
+    public void volar() {
+        if (vuela)
+            System.out.println("Tu animal puede volar");
+        else
+            System.out.println("Tu animal no puede volar");
+
+    }
 }

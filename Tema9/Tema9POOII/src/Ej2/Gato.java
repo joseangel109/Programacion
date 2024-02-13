@@ -3,26 +3,32 @@ package Ej2;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Gato extends Mascotas{
+public class Gato extends Mascotas {
     String color;
     boolean peloLargo;
+
     public String getColor() {
         return color;
     }
+
     public void setColor(String color) {
         this.color = color;
     }
+
     public boolean isPeloLargo() {
         return peloLargo;
     }
+
     public void setPeloLargo(boolean peloLargo) {
         this.peloLargo = peloLargo;
     }
+
     public Gato(String nombre, int edad, boolean estado, LocalDate fechaNacimiento, String color, boolean peloLargo) {
         super(nombre, edad, estado, fechaNacimiento);
         this.color = color;
         this.peloLargo = peloLargo;
     }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -31,6 +37,7 @@ public class Gato extends Mascotas{
         result = prime * result + (peloLargo ? 1231 : 1237);
         return result;
     }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -52,11 +59,16 @@ public class Gato extends Mascotas{
 
     @Override
     public String toString() {
-        return "Gato [color=" + color + ", peloLargo=" + peloLargo + "]";
+        return "Gato [color=" + color + ", peloLargo=" + peloLargo + super.toString() + "]";
     }
 
     public void muestra() {
-                System.out.println(toString());
+        System.out.println(toString());
 
-        }
+    }
+
+    public void habla() {
+        System.out.println(toString());
+
+    }
 }

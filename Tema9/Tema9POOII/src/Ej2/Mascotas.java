@@ -8,36 +8,46 @@ public abstract class Mascotas {
     int edad;
     boolean estado;
     LocalDate fechaNacimiento;
+
     public String getNombre() {
         return nombre;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public int getEdad() {
         return edad;
     }
+
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
     public boolean isEstado() {
         return estado;
     }
+
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
+
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
+
     public Mascotas(String nombre, int edad, boolean estado, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.edad = edad;
         this.estado = estado;
         this.fechaNacimiento = fechaNacimiento;
     }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -48,6 +58,7 @@ public abstract class Mascotas {
         result = prime * result + ((fechaNacimiento == null) ? 0 : fechaNacimiento.hashCode());
         return result;
     }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -73,14 +84,29 @@ public abstract class Mascotas {
             return false;
         return true;
     }
+
     @Override
     public String toString() {
-        return "Mascotas [nombre=" + nombre + ", edad=" + edad + ", estado=" + estado + ", fechaNacimiento="
+        return " [nombre=" + nombre + ", edad=" + edad + ", estado=" + estado + ", fechaNacimiento="
                 + fechaNacimiento + "]";
     }
 
     public void muestra() {
-                System.out.println(toString());
+        System.out.println(toString());
+    }
 
-        }
+    public void cumpleaños() {
+        System.out.println(this.fechaNacimiento);
+    }
+
+    public void morir(boolean estado) {
+        if (estado)
+            System.out.println("Tu animal esta vivo");
+        else
+            System.out.println("Tu animal esta muerto");
+    }
+
+    public void habla() {
+        System.out.println();
+    }
 }
