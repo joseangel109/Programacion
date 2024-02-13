@@ -1,3 +1,5 @@
+package Ej1;
+
 import java.util.ArrayList;
 
 public class Ej1Satelites extends Ej1Astros {
@@ -47,7 +49,7 @@ public class Ej1Satelites extends Ej1Astros {
         @Override
         public String toString() {
                 return "Ej1Satelites [distaciaPlaneta=" + distaciaPlaneta + ", orbitaPlanetaria=" + orbitaPlanetaria
-                                + ", planetaPertenece=" + planetaPertenece + "]"+ super.toString();
+                                + ", planetaPertenece=" + planetaPertenece + "]" + super.toString();
         }
 
         public float getDistaciaPlaneta() {

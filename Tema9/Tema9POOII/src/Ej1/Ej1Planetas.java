@@ -1,3 +1,5 @@
+package Ej1;
+
 import java.util.ArrayList;
 
 public class Ej1Planetas extends Ej1Astros {

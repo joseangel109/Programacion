@@ -76,16 +76,16 @@ public class Empresa {
     public void calcularBrutoTodos() {
         float sueldos = 0;
         for (Empleado empleado : listaEmpleados) {
-                sueldos += empleado.sueldoBruto;
-            }   
+            sueldos += empleado.sueldoBruto;
+        }
         System.out.println("Los sueldos brutos de los empleados " + sueldos);
     }
 
     public void calcularNetoTodos() {
         float sueldos = 0;
         for (Empleado empleado : listaEmpleados) {
-                sueldos += empleado.calculaNeto(empleado.sueldoBruto);
-            }   
+            sueldos += empleado.calculaNeto(empleado.sueldoBruto);
+        }
         System.out.println("Los sueldos neto de los empleados " + sueldos);
     }
 }
