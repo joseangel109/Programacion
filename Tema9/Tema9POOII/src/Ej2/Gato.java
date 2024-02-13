@@ -69,6 +69,7 @@ public class Gato extends Mascotas {
 
     public void habla() {
         System.out.println(toString());
+        System.out.println("MIAU");
 
     }
 }
