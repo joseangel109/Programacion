@@ -68,7 +68,7 @@ public class Perro extends Mascotas {
     }
 
     public void habla() {
-        System.out.println(toString());
+        System.out.println("GUAU GUAU");
 
     }
 }

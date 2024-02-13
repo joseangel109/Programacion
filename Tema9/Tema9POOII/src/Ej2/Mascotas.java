@@ -96,7 +96,7 @@ public abstract class Mascotas {
     }
 
     public void cumpleaños() {
-        System.out.println(this.fechaNacimiento);
+        this.edad=this.edad+1;
     }
 
     public void morir(boolean estado) {

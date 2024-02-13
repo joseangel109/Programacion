@@ -63,7 +63,7 @@ public class Canario extends Aves {
     }
 
     public void habla() {
-        System.out.println(toString());
+        System.out.println("PIO PIO");
 
     }
 

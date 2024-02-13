@@ -72,7 +72,7 @@ public class Inventario {
     public static void mostrarAnimalID(Scanner teclado) {
         System.out.println("Que animal quieres mostrar");
         int ID = teclado.nextInt();
-        System.out.println(listaAnimales.get(ID + 1));
+        System.out.println(listaAnimales.get(ID - 1));
     }
 
     public static void mostrarTodo() {

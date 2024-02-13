@@ -63,7 +63,7 @@ public class Loro extends Aves {
     }
 
     public void saluda() {
-        System.out.println(toString());
+        System.out.println("hola");
 
     }
 
