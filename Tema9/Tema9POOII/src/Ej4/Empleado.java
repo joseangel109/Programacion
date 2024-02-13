@@ -3,7 +3,7 @@ package Ej4;
 public class Empleado {
     final String nombre;
     final String dni;
-    static float sueldoBruto;
+    float sueldoBruto;
     int edad;
     int telefono;
     String direccion;
@@ -113,9 +113,9 @@ public class Empleado {
         System.out.println(toString());
     }
 
-    public void calculaNeto(float sueldoBruto) {
+    public float calculaNeto(float sueldoBruto) {
         int irpf = 0;
-        int sueldoAnual = sueldoBruto * 12;
+        float sueldoAnual = sueldoBruto * 12;
         if (sueldoAnual < 12000)
             irpf = 20;
         if (sueldoAnual > 12000 && sueldoAnual < 25000)
@@ -123,8 +123,8 @@ public class Empleado {
         else
             irpf = 40;
 
-        int sueldoNeto = sueldoBruto - ((sueldoBruto * irpf) / 100);
-
+        float sueldoNeto = sueldoBruto - ((sueldoBruto * irpf) / 100);
+        return sueldoNeto;
     }
 
 }

@@ -8,13 +8,16 @@ public class Programa {
         Empresa empresa2=new Empresa("mondongo", "12345678", 876543, "jononwrihgoña", 10);
 
         empresa1.añadirEmpleados(empleado1);
-        System.out.println(empresa1.listaEmpleados);
+        empresa1.mostrarEmpleados();
         empresa1.eliminarEmpleados(empleado1);
-        System.out.println(empresa1.listaEmpleados);
+        empresa1.mostrarEmpleados();
         empresa1.añadirEmpleados(empleado1);
         empresa1.añadirEmpleados(empleado2);
         empresa1.mostrarEmpleados();
         System.out.println("/////////////////////////////////");
         empresa1.calcularBrutoTodos();
+        System.out.println("/////////////////////////////////");
+        empresa1.calcularNetoTodos();
+
     }
 }

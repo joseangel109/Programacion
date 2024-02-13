@@ -9,7 +9,7 @@ public class Empresa {
     String direccion;
     int empleados = 0;
 
-    static ArrayList<Empleado> listaEmpleados = new ArrayList<>();
+    private ArrayList<Empleado> listaEmpleados = new ArrayList<>();
 
     public Empresa(String nombre, String cIF, int telefono, String direccion, int empleados) {
         this.nombre = nombre;
@@ -57,15 +57,15 @@ public class Empresa {
                 + ", empleados=" + empleados + "]";
     }
 
-    public static void añadirEmpleados(Empleado e) {
+    public void añadirEmpleados(Empleado e) {
         listaEmpleados.add(e);
     }
 
-    public static void eliminarEmpleados(Empleado e) {
+    public void eliminarEmpleados(Empleado e) {
         listaEmpleados.remove(e);
     }
 
-    public static void mostrarEmpleados() {
+    public void mostrarEmpleados() {
         System.out.println(listaEmpleados.toString());
     }
 
@@ -73,19 +73,19 @@ public class Empresa {
 
     }
 
-    public void calcularBrutoTodos(ArrayList<Empleado> listaEmpleados) {
+    public void calcularBrutoTodos() {
         float sueldos = 0;
-        for (int i = 0; i < array.length; i++) {
-            sueldos += Empleado.sueldoBruto;
-        }
+        for (Empleado empleado : listaEmpleados) {
+                sueldos += empleado.sueldoBruto;
+            }   
         System.out.println("Los sueldos brutos de los empleados " + sueldos);
     }
 
-    public void calculaNetoTodos(ArrayList<Empleado> listaEmpleados) {
+    public void calcularNetoTodos() {
         float sueldos = 0;
-        for (int i = 0; i < array.length; i++) {
-            sueldos += Empleado.sueldoNeto;
-        }
-        System.out.println("Los sueldos netos de los empleados " + sueldos);
+        for (Empleado empleado : listaEmpleados) {
+                sueldos += empleado.calculaNeto(empleado.sueldoBruto);
+            }   
+        System.out.println("Los sueldos neto de los empleados " + sueldos);
     }
 }
