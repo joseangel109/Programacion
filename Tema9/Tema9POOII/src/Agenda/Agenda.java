@@ -29,9 +29,9 @@ public class Agenda {
     boolean añadirContacto(Contacto c) {// Añade un contacto a la agenda e indica si se ha añadido.
         // No se pueden meter contactos que existan, es decir, no podemos duplicar
         // nombres (aunque tengan distinto teléfono).
-        Persona test=new Persona("test", 876540, "104/23/23");
+        listaContactos.add.Persona test = new Persona("test", 876540, "104/23/23");
         for (Contacto contacto : listaContactos) {
-            if(contacto.getNombre().equals("test")){
+            if (contacto.getNombre().equals("test")) {
                 listaContactos.remove(contacto);
             }
             if (!contacto.equals(c)) {
