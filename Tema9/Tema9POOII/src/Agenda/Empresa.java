@@ -7,11 +7,13 @@ public class Empresa extends Contacto {
 
     public Empresa(String nombre, int telefono, String paginaWeb) {
         super(nombre, telefono);
-        this.paginaWeb=paginaWeb;
+        this.paginaWeb = paginaWeb;
     }
+
     @Override
     public String toString() {
-        return "Su nombre es " + this.getNombre() + ", y su numero de telefono es: " + this.getTelefono()+ " su pagina web es " + paginaWeb;
+        return "Su nombre es " + this.getNombre() + ", y su numero de telefono es: " + this.getTelefono()
+                + " su pagina web es " + paginaWeb;
     }
 
 }

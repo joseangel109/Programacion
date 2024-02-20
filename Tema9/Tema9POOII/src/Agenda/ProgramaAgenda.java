@@ -16,9 +16,12 @@ public class ProgramaAgenda {
         System.out.println("Mostramos la lista");
         agenda.listarContactos();
         System.out.println("Eliminamos la empresa");
-        agenda.eliminarContacto("aña");
+        System.out.println(agenda.eliminarContacto("aña"));
         System.out.println("Mostramos la lista");
         agenda.listarContactos();
-
+        System.out.println("Probamos si existe el contacto aña");
+        System.out.println(agenda.existeContacto("aña"));
+        System.out.println("Buscamos contacto");
+        System.out.println(agenda.buscaContacto("aña"));
     }
 }
