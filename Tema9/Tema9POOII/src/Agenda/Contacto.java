@@ -1,18 +1,19 @@
 package Agenda;
 
 public abstract class Contacto {
-    // Un contacto tiene un nombre y un teléfono (no es necesario validarlos). Se considera que dos contactos son iguales si sus nombres son iguales.
+    // Un contacto tiene un nombre y un teléfono (no es necesario validarlos). Se
+    // considera que dos contactos son iguales si sus nombres son iguales.
     private String nombre;
     private int telefono;
-    
-    //Constructor
+
+    // Constructor
 
     public Contacto(String nombre, int telefono) {
         this.nombre = nombre;
         this.telefono = telefono;
     }
 
-    //Hash code y equals
+    // Hash code y equals
 
     @Override
     public int hashCode() {
@@ -38,11 +39,10 @@ public abstract class Contacto {
             return false;
         return true;
     }
-    
 
-    //tooString
+    // tooString
 
-        public String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
@@ -58,12 +58,9 @@ public abstract class Contacto {
         this.telefono = telefono;
     }
 
-        @Override
+    @Override
     public String toString() {
         return "Su nombre es " + nombre + ", y su numero de telefono es: " + telefono;
     }
-    
-
-    
 
 }
