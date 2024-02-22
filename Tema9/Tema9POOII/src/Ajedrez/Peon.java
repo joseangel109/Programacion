@@ -15,7 +15,7 @@ public class Peon extends Pieza {
             if (getPosicion().y == 1 && y >= 2 && y <= 3) {
                 posicion.setLocation(x, y);
             } else if (y - 1 == getPosicion().y)
-                posicion.setLocation(x, y);
+                posicion.setLocation(x, getPosicion().y + 1);
         }
     }
 }
