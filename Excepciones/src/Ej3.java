@@ -21,6 +21,7 @@ public class Ej3 {
 
             } catch (InputMismatchException e) {
                 System.out.println("Error: Introduce un numero.");
+                teclado.nextLine();
             }
         }
 
