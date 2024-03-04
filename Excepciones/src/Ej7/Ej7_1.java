@@ -1,10 +1,10 @@
-package Ej6;
+package Ej7;
 
-public class Ej6_1 {
+public class Ej7_1 {
     private String nombre;
     private int edad;
 
-    public Ej6_1(String nombre, int edad) throws Exception {
+    public Ej7_1(String nombre, int edad) throws Exception {
         setNombre(nombre);
         setEdad(edad);
     }
