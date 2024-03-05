@@ -12,7 +12,7 @@ public class Ej7Main {
 
         while (gatosCreados < 5) {
             try {
-                System.out.println("Introduce los datos del gato #" + (gatosCreados + 1) + ":");
+                System.out.println("Introduce los datos del gato " + (gatosCreados + 1) + ":");
                 System.out.print("Nombre: ");
                 String nombre = scanner.nextLine();
                 System.out.print("Edad: ");

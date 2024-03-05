@@ -1,22 +1,15 @@
 package Biblioteca;
 
 public class Autor {
-    String nombre;
-    String pseudonimo;
-
-    
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
+    private final String nombre;
+    private final String pseudomonio;
+    public Autor(String nombre, String pseudomonio) {
         this.nombre = nombre;
+        this.pseudomonio = pseudomonio;
     }
-    public String getPseudonimo() {
-        return pseudonimo;
-    }
-    public void setPseudonimo(String pseudonimo) {
-        this.pseudonimo = pseudonimo;
-    }
-
     
+    @Override
+    public String toString() {
+        return "Autor [nombre=" + nombre + ", pseudomonio=" + pseudomonio + "]";
+    }
 }
