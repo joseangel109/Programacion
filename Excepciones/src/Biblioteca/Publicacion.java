@@ -1,6 +1,6 @@
 package Biblioteca;
 
-public abstract class Publicacion {
+public abstract class Publicacion implements Comparable<Publicacion> {
     // Generamos los dos atributos que no pueden variar
     static int identificador;
     static int contador;
@@ -12,4 +12,12 @@ public abstract class Publicacion {
 
     public abstract void mostrarEnLinea();
 
+    @Override
+    public int compareTo(Publicacion arg0) {
+        if (this instanceof Libro && arg0 instanceof Revista)
+            return -1;
+        else if (this instanceof Revista && arg0 instanceof Libro)
+            return 1;
+        return 0;
+    }
 }

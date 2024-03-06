@@ -1,15 +1,8 @@
 package Biblioteca;
 
-public class Autor {
-    private final String nombre;
-    private final String pseudomonio;
-    public Autor(String nombre, String pseudomonio) {
-        this.nombre = nombre;
-        this.pseudomonio = pseudomonio;
-    }
-    
+public record Autor(String nombre, String pseudonimo) implements Comparable<Autor> {
     @Override
-    public String toString() {
-        return "Autor [nombre=" + nombre + ", pseudomonio=" + pseudomonio + "]";
+    public int compareTo (Autor arg0){
+        return this.nombre.compareTo(arg0.nombre);
     }
 }

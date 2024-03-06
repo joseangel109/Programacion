@@ -1,10 +1,9 @@
 package Biblioteca;
 
-public class Revista extends Publicacion {
+public class Revista extends Publicacion implements Comparable<Revista>{
     private String issn;
     private String nombre;
     private int numero;
-    private static int contador = 1;
 
     // Constructor y comprobacion del issn
     public Revista(String issn, String nombre, int numero) throws Exception {
@@ -57,11 +56,19 @@ public class Revista extends Publicacion {
         Revista.contador = contador;
     }
 
-    // Aun no
     @Override
     public void mostrarEnLinea() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarEnLinea'");
-    }
+        System.out.printf("%6s %25s %3d %n",identificador,issn,nombre,numero);    
+    }//%6s "los huecos que ocupan"
 
+    @Override
+    public int compareTo(Revista otraCosa) {
+        if(otraCosa instanceof Libro)
+        return 1;
+        Revista laOtraRevista=(Revista)otraCosa;
+        int comparacionNombre=this.nombre.compareTo(laOtraRevista.nombre);
+        if (comparacionNombre==0)
+            return this.issn.compareTo(laOtraRevista.issn);
+        return comparacionNombre;
+    }  
 }

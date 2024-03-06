@@ -6,59 +6,63 @@ import java.util.InputMismatchException;
 import java.util.List;
 
 public class Biblioteca {
-    private ArrayList<Publicacion> listadinamia = new ArrayList<>();
+    ArrayList<Publicacion> lista = new ArrayList<>();
 
-    public Biblioteca(ArrayList<Publicacion> listadinamia) {
-        this.listadinamia = listadinamia;
+    public void anyadir(Publicacion p) {
+        lista.add(p);
     }
 
-    public void anyadir(Publicacion p) throws Exception {
+    public boolean anyadirlibro(String isbn, String titulo, int ejemplares) {
         try {
-            listadinamia.add(p);
-
-        } catch (InputMismatchException ex) {
-            System.out.println("mal");
+            lista.add(new Libro(isbn, titulo, ejemplares));
+            return true;
+        } catch (ValorIncorrecto | PublicacionException e) {
+            System.out.println("Se ha producido un error en la creacion del libro: " + e.getMessage());
         }
+        return false;
     }
 
-    public void anyadirlibro(String isbn, String titulo, Autor a, int ejemplares) throws Exception {
-        try {
-            listadinamia.add(new Libro(isbn, titulo, a, ejemplares));
-        } catch (InputMismatchException ex) {
-            System.out.println("Valores incorrectos");
-        }
-    }
-
-    public Publicacion buscar(int posicion) {
-        try {
-            return listadinamia.get(posicion);
-        } catch (ArrayIndexOutOfBoundsException ex) {
-            System.out.println("Fuera de rango");
-            return null;
-        }
-    }
-
-    public boolean buscarLibro(Libro l1) {
-        try {
-            return listadinamia.contains(l1);
-        } catch (InputMismatchException ex) {
-            System.out.println("no es un libro pichon");
-            return false;
-        }
-    }
-
-    public ArrayList <Revista> revistasOrdenadas(){
-        try{
-            ArrayList <Revista> listaRevistas= new ArrayList<>();
-            for (Publicacion publicacion : listadinamia) {
-                if (publicacion.getClass()==Revista.class){
-                    Revista r1= (Revista) publicacion;
-                    listaRevistas.add(r1);
-
-                }
-                     
+    public Publicacion buscar(String titulo) throws PublicacionException{
+        for (Publicacion publicacion : lista) {
+            if (publicacion instanceof Libro) {
+                Libro esunLibro = (Libro) publicacion;
+                if (esunLibro.getTitulo())
+                    return esunLibro;
+            } else {
+                Revista esunaRevista = (Revista) publicacion;
+                if (esunaRevista.getNombre())
+                    return esunaRevista;
             }
-            listaRevistas.sort(listaRevistas.get(0).getNombre());
+        }
+        throw new PublicacionException("El libro no se ha encontrado. Titulo: "+titulo);
+    }
+
+    public boolean buscarLibro(Libro libro) {
+        for (Publicacion publicacion : lista) {
+            if (publicacion.equals(libro))
+                return true;
+        }
+        return false;
+    }
+
+    public ArrayList<Revista> revistasOrdenadas(){
+        ArrayList<Revista> revistas=new ArrayList<>();
+        for (Publicacion publicacion : lista) {
+            if(publicacion instanceof Revista)
+                revistas.add((Revista)publicacion);
+        }
+        Collections.sort(revistas);
+        return revistas;
+    }
+
+    public void ordenar(){
+        Collections.sort(lista);
+    }
+    
+    public void mostrarLineas(){
+        ordenar();
+        for (Publicacion publicacion : lista) {
+            publicacion.mostrarEnLinea();
         }
     }
 }
