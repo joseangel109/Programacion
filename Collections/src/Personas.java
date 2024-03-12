@@ -5,7 +5,7 @@ public class Personas {
     int telefono;
     String email;
     LocalDate fechaNacimiento;
-    
+
     public Personas(String nombre, int telefono, String email, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.telefono = telefono;
@@ -44,5 +44,4 @@ public class Personas {
                 + fechaNacimiento + "]";
     }
 
-    
 }
