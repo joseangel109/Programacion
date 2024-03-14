@@ -4,20 +4,14 @@ import java.util.Scanner;
 public class Equipo {
     public static void main(String[] args) {
         HashMap<Integer, Jugador> listaEquipo = new HashMap();
-        listaEquipo.put(1, new Jugador("juan", 100));
+        listaEquipo.put(1, new Jugador("Juan", 100));
+        listaEquipo.put(12, new Jugador("Pedro", 1240));
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Introduce 10 para salir");
-        int salir;
-        do {
-            System.out.println("Introduce 10 si quieres salir del programa, nada si quieres seguir");
-            salir=teclado.nextInt();
-            mostrarMenu();
-            int opcion = teclado.nextInt();
-             
-            elegirOpcion(opcion, listaEquipo, teclado);   
-             
-        } while (salir==10);
-        
+        mostrarMenu();
+        int opcion = teclado.nextInt();
+
+        elegirOpcion(opcion, listaEquipo, teclado);
+
     }
 
     static void mostrarMenu() {
@@ -30,7 +24,7 @@ public class Equipo {
     }
 
     static void elegirOpcion(int opcion, HashMap listaEquipo, Scanner teclado) {
-    
+
         switch (opcion) {
             case 1:
                 System.out.println("Has elegido añadir jugador");
@@ -46,42 +40,59 @@ public class Equipo {
                 break;
             case 4:
                 System.out.println("Has elegido aumentar salario un 10%");
-                aumentarSalario(listaEquipo, teclado);
+                aumentarSalario(listaEquipo, teclado, Jugador.getSalario(), Jugador.getNombre());
                 break;
             default:
                 System.out.println("Numero introducido incorrecto");
                 break;
-        }    
+        }
     }
 
-    static void añadirJugador(HashMap listaEquipo, Scanner teclado) {
+    static String añadirJugador(HashMap listaEquipo, Scanner teclado) {
+        System.out.println(listaEquipo);
         System.out.println("Vas a añadir un jugador");
-        
+        System.out.println("Dime el nombre del jugador");
+        String x = teclado.nextLine();
+        String nombre = teclado.nextLine();
+        System.out.println("Dime el ID del jugador");
+        int id = teclado.nextInt();
+        System.out.println("Dime el salario del jugador " + nombre);
+        double salario = teclado.nextDouble();
+        listaEquipo.put(id, new Jugador(nombre, salario));
+        System.out.println("Se ha añadido el jugador");
+        System.out.println(listaEquipo);
+        return listaEquipo.toString();
     }
 
     static void eliminarJugador(HashMap listaEquipo, Scanner teclado) {
         System.out.println("Dime el ID del jugador que quieres eliminar");
-        int eliminarID=teclado.nextInt();
-        if(listaEquipo.containsKey(eliminarID))
+        int eliminarID = teclado.nextInt();
+        if (listaEquipo.containsKey(eliminarID)) {
             listaEquipo.remove(eliminarID);
-        else
+        } else
             System.out.println("No se ha encontrado ningun jugador con ese ID");
+        System.out.println(listaEquipo);
     }
 
     static void mostrarInfoJugador(HashMap listaEquipo, Scanner teclado) {
+        System.out.println(listaEquipo.toString());
         System.out.println("Dime el ID del jugador");
         int buscarID = teclado.nextInt();
-        if(listaEquipo.containsKey(buscarID))
+        if (listaEquipo.containsKey(buscarID))
             listaEquipo.get(buscarID);
-            System.out.println(listaEquipo.get(buscarID));
+        System.out.println(listaEquipo.get(buscarID));
     }
 
-    static void aumentarSalario(HashMap listaEquipo, Scanner teclado) {
+    static void aumentarSalario(HashMap listaEquipo, Scanner teclado, double salario, String nombre) {
+        System.out.println(listaEquipo.toString());
         System.out.println("Dime el ID del jugador que quieres aumentar");
         int buscarID = teclado.nextInt();
-        if(listaEquipo.containsKey(buscarID))
-            listaEquipo.get(buscarID);
-        System.out.println( );
-            System.out.println(listaEquipo.get(buscarID));
+        if (listaEquipo.containsKey(buscarID)) {
+            System.out.println("El nuevo salario es:");
+            double nuevoSalario = salario + ((salario * 10) / 100);
+            listaEquipo.put(buscarID, new Jugador(Jugador.getNombre(), nuevoSalario));
+        }
+        System.out.println(listaEquipo);
+
     }
 }

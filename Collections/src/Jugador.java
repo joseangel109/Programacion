@@ -2,32 +2,26 @@ public class Jugador {
     String nombre;
     double salario;
 
-
     public Jugador(String nombre, double salario) {
         this.nombre = nombre;
         this.salario = salario;
     }
 
-
     public String getNombre() {
         return nombre;
     }
-
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-
     public double getSalario() {
         return salario;
     }
 
-
     public void setSalario(double salario) {
         this.salario = salario;
     }
-
 
     @Override
     public int hashCode() {
@@ -37,13 +31,10 @@ public class Jugador {
         return result;
     }
 
-
-    
     @Override
     public String toString() {
-        return "Jugador " + nombre + ", salario=" + salario;
+        return "El jugador se llama " + nombre + " y su salario es " + salario + "\n";
     }
-
 
     @Override
     public boolean equals(Object obj) {
@@ -61,6 +52,5 @@ public class Jugador {
             return false;
         return true;
     }
-    
-    
+
 }
