@@ -24,5 +24,5 @@ public class Ej4 {
         }
            System.out.println("La media de los positivos es: "+sumaPos/contPos); 
            System.out.println("La media de los negativos es: "+sumaNeg/contNeg);
-    }
+        }
 }
