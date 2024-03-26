@@ -1,4 +1,4 @@
-package ies.thiar;
+package ies.thiar.MillasAKilometros;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

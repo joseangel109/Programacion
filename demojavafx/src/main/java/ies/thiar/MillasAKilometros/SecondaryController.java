@@ -1,6 +1,7 @@
-package ies.thiar;
+package ies.thiar.MillasAKilometros;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
 
 public class SecondaryController {

@@ -1,4 +1,4 @@
-package ies.thiar;
+package ies.thiar.Calculadora;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +17,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("millasakilometros"), 640, 480);
+        scene = new Scene(loadFXML("calculadora"), 640, 480);
         stage.setScene(scene);
         stage.show();
     }
