@@ -4,4 +4,5 @@ module ies.thiar {
 
     opens ies.thiar to javafx.fxml;
     exports ies.thiar;
+    
 }
